@@ -1,5 +1,7 @@
 # Omnipowers
 
+English | [简体中文](README.zh-CN.md)
+
 Omnipowers is a complete software development workflow for your coding agents, built on top of a set of composable "skills" and some initial instructions that make sure your agent uses them.
 
 ## How it works
@@ -118,8 +120,6 @@ Fetch and follow instructions from https://raw.githubusercontent.com/aaione/omni
 - **Systematic over ad-hoc** - Process over guessing
 - **Complexity reduction** - Simplicity as primary goal
 - **Evidence over claims** - Verify before declaring success
-
-Read more: [Omnipowers for Claude Code](https://blog.fsck.com/2025/10/09/omnipowers/)
 
 ## Contributing
 
