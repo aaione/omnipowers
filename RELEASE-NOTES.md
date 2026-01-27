@@ -4,6 +4,12 @@
 
 Historical changes prior to the fork are documented in the [original superpowers repository](https://github.com/obra/superpowers/blob/main/RELEASE-NOTES.md).
 
+## 4.1.2 - 2026-01-27
+
+### Added
+- **react-best-practices**: React and Next.js performance optimization guidelines from Vercel Engineering
+- **updating-plugin-versions**: Automated version management skill for Claude Code plugins
+
 ## Links
 
 - **Repository**: https://github.com/aaione/omnipowers

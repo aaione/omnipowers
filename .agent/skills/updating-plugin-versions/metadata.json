@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "organization": "Omnipowers",
+  "date": "January 2025",
+  "abstract": "通用的 Claude Code Plugin 版本管理技能。自动检测项目结构并同步更新所有版本相关文件，支持 PATCH/MINOR/MAJOR 三种版本更新类型，遵循语义化版本规范 (SemVer)。",
+  "references": [
+    "https://semver.org",
+    "https://docs.claude.com/en/docs/claude-code/plugins",
+    "https://docs.claude.com/en/docs/claude-code/plugins-reference",
+    "https://keepachangelog.com/"
+  ],
+  "keywords": [
+    "version-management",
+    "semantic-versioning",
+    "semver",
+    "claude-code-plugin",
+    "changelog",
+    "release-management",
+    "版本管理",
+    "通用技能"
+  ]
+}
