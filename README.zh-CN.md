@@ -47,6 +47,8 @@ Omnipowers 是一个完整的软件开发工作流，专为你的编码代理构
 # /omnipowers:brainstorm - 头脑风暴式设计完善
 # /omnipowers:write-plan - 创建实现计划
 # /omnipowers:execute-plan - 批量执行计划
+# /omnipowers:e2e - 生成和运行 E2E 测试
+# /omnipowers:compound - 将已解决的问题沉淀为文档
 ```
 
 ### Codex

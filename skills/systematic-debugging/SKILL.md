@@ -49,6 +49,8 @@ You MUST complete each phase before proceeding to the next.
 
 ### Phase 1: Root Cause Investigation
 
+> Before investigating, check `docs/solutions/` for similar issues.
+
 **BEFORE attempting ANY fix:**
 
 1. **Read Error Messages Carefully**

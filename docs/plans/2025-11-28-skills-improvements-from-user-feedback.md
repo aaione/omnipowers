@@ -640,7 +640,7 @@ How do we know these improvements work?
 
 1. **Configuration verification:**
    - Zero instances of "test passed but wrong config was used"
-   - Jesse doesn't say "that's not actually testing what you think"
+   - Zero instances of testing the wrong configuration
 
 2. **Process hygiene:**
    - Zero instances of "test hit wrong server"
@@ -699,7 +699,7 @@ How do we know these improvements work?
 - testing-anti-patterns: Mock-interface drift
 - requesting-code-review: Explicit file reading
 
-**Test Phase 2 with Jesse before finalizing:**
+**Test Phase 2 with user feedback before finalizing:**
 - Get feedback on self-reflection impact
 - Validate process hygiene approach
 - Confirm skills reading requirement is worth overhead

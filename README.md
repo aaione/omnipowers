@@ -48,6 +48,8 @@ Check that commands appear:
 # /omnipowers:brainstorm - Interactive design refinement
 # /omnipowers:write-plan - Create implementation plan
 # /omnipowers:execute-plan - Execute plan in batches
+# /omnipowers:e2e - Generate and run E2E tests
+# /omnipowers:compound - Document solved problems
 ```
 
 ### Codex

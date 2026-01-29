@@ -1,0 +1,176 @@
+# Compound Documentation Schema
+# This schema MUST be validated before writing any documentation file
+
+required_fields:
+  title:
+    type: string
+    description: "Clear, concise problem title"
+    examples:
+      - "Playwright Tests Flaky Due to Race Conditions"
+      - "Docker Container Port Binding Conflict"
+      - "API Rate Limiting Causing Timeout Errors"
+
+  date:
+    type: string
+    pattern: '^\d{4}-\d{2}-\d{2}$'
+    description: "Date when this problem was solved (YYYY-MM-DD)"
+
+  problem_type:
+    type: enum
+    values:
+      - bug                  # Code defects, unexpected behavior
+      - performance          # Slow execution, memory issues, N+1 queries
+      - config               # Configuration, environment, setup issues
+      - test                 # Test failures, flaky tests, test infrastructure
+      - security             # Security vulnerabilities, auth issues
+      - integration          # Third-party API, external service issues
+      - ui                   # Visual bugs, layout issues, CSS problems
+      - logic                # Business logic errors, algorithm bugs
+      - build                # Build, compilation, bundler errors
+      - database             # Migration, query, schema problems
+      - devex                # Developer experience: workflow, tooling, setup
+    description: "Primary category of the problem"
+
+  severity:
+    type: enum
+    values:
+      - critical             # Blocks production or development (build fails, data loss)
+      - high                 # Impairs core functionality (feature broken, security issue)
+      - medium               # Affects specific feature (UI broken, performance impact)
+      - low                  # Minor issue or edge case
+    description: "Impact severity"
+
+  tech_stack:
+    type: array[string]
+    min_items: 1
+    max_items: 10
+    description: "Technologies involved in the problem"
+    examples:
+      - "playwright"
+      - "typescript"
+      - "react"
+      - "node"
+      - "docker"
+      - "postgresql"
+
+  symptoms:
+    type: array[string]
+    min_items: 1
+    max_items: 5
+    description: "Observable symptoms (error messages, visual issues, crashes)"
+    examples:
+      - "Timeout 30000ms exceeded"
+      - "Element not visible after page load"
+      - "Connection refused on port 5432"
+
+  tags:
+    type: array[string]
+    max_items: 8
+    description: "Searchable keywords (lowercase, hyphen-separated)"
+    examples:
+      - "race-condition"
+      - "flaky-test"
+      - "e2e"
+      - "timeout"
+
+  search_terms:
+    type: array[string]
+    min_items: 1
+    max_items: 5
+    description: "Exact error messages or phrases for grep search"
+    examples:
+      - "Timeout 30000ms exceeded"
+      - "waiting for selector"
+      - "ECONNREFUSED"
+
+optional_fields:
+  component:
+    type: string
+    description: "Specific component or module affected"
+    examples:
+      - "E2E test suite"
+      - "Authentication module"
+      - "API gateway"
+      - "Build pipeline"
+
+  root_cause:
+    type: enum
+    values:
+      - race_condition       # Timing/async race condition
+      - missing_await        # Missing async/await
+      - config_error         # Configuration or environment issue
+      - logic_error          # Algorithm/business logic bug
+      - memory_leak          # Memory leak or excessive allocation
+      - network_issue        # Network connectivity or timeout
+      - dependency_conflict  # Package/dependency version conflict
+      - missing_dependency   # Missing required dependency
+      - permission_issue     # File/network permission denied
+      - state_mutation       # Unexpected state mutation
+      - type_error           # Type mismatch or coercion issue
+      - null_reference       # Null/undefined reference
+      - resource_exhaustion  # CPU/memory/disk exhaustion
+      - encoding_issue       # Character encoding problem
+      - api_breaking_change  # External API changed
+    description: "Fundamental cause of the problem (optional but recommended)"
+
+  resolution_type:
+    type: enum
+    values:
+      - code_fix             # Fixed by changing source code
+      - config_change        # Fixed by changing configuration
+      - dependency_update    # Fixed by updating dependency
+      - environment_setup    # Fixed by environment configuration
+      - test_fix             # Fixed by correcting tests
+      - workaround           # Temporary workaround applied
+      - documentation        # Clarified documentation
+    description: "Type of fix applied (optional)"
+
+  related_docs:
+    type: array[string]
+    description: "Links to related documentation files"
+    examples:
+      - "../performance/similar-issue.md"
+      - "../patterns/critical-patterns.md"
+
+validation_rules:
+  - "title must be clear and descriptive"
+  - "date must be in YYYY-MM-DD format"
+  - "problem_type must match one of the enum values"
+  - "severity must match one of the enum values"
+  - "tech_stack must have at least 1 item"
+  - "symptoms must be specific and observable (not vague)"
+  - "tags should be lowercase, hyphen-separated"
+  - "search_terms should be exact phrases for grep"
+
+# Category Mapping (problem_type → directory)
+category_mapping:
+  bug: "bugs"
+  performance: "performance"
+  config: "config"
+  test: "testing"
+  security: "security"
+  integration: "integration"
+  ui: "ui"
+  logic: "logic"
+  build: "build"
+  database: "database"
+  devex: "devex"
+
+# Example valid front matter:
+# ---
+# title: Playwright Tests Flaky Due to Race Conditions
+# date: 2025-01-29
+# problem_type: test
+# severity: medium
+# tech_stack: [playwright, typescript, node]
+# symptoms:
+#   - "Timeout 30000ms exceeded"
+#   - "Element not visible after click"
+# tags: [race-condition, flaky-test, e2e]
+# search_terms:
+#   - "Timeout 30000ms exceeded"
+#   - "waiting for selector"
+# component: E2E test suite
+# root_cause: race_condition
+# resolution_type: code_fix
+# ---

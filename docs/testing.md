@@ -149,8 +149,8 @@ python3 tests/claude-code/analyze-token-usage.py ~/.claude/projects/<project-dir
 Session transcripts are stored in `~/.claude/projects/` with the working directory path encoded:
 
 ```bash
-# Example for /Users/jesse/Documents/GitHub/omnipowers/omnipowers
-SESSION_DIR="$HOME/.claude/projects/-Users-jesse-Documents-GitHub-omnipowers-omnipowers"
+# Example for ~/Documents/GitHub/omnipowers/omnipowers
+SESSION_DIR="$HOME/.claude/projects/-$(echo ~ | sed 's/\//-/g')-Documents-GitHub-omnipowers-omnipowers"
 
 # Find recent sessions
 ls -lt "$SESSION_DIR"/*.jsonl | head -5
