@@ -1,0 +1,24 @@
+{
+  "name": "omnipowers",
+  "displayName": "Omnipowers",
+  "description": "Core skills library: TDD, debugging, collaboration patterns, and proven techniques",
+  "version": "5.0.6",
+  "author": {
+    "name": "Omnipowers Contributors"
+  },
+  "homepage": "https://github.com/aaione/omnipowers",
+  "repository": "https://github.com/aaione/omnipowers",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "tdd",
+    "debugging",
+    "collaboration",
+    "best-practices",
+    "workflows"
+  ],
+  "skills": "./skills/",
+  "agents": "./agents/",
+  "commands": "./commands/",
+  "hooks": "./hooks/hooks-cursor.json"
+}

@@ -19,7 +19,17 @@ There's a bunch more to it, but that's the core of the system. And because the s
 
 ## Installation
 
-**Note:** Installation differs by platform. Claude Code has a built-in plugin system. Codex and OpenCode require manual setup.
+**Note:** Installation differs by platform. Claude Code or Cursor have built-in plugin marketplaces. Codex and OpenCode require manual setup.
+
+### Claude Code Official Marketplace
+
+Omnipowers is available via the [official Claude plugin marketplace](https://claude.com/plugins/omnipowers)
+
+Install the plugin from Claude marketplace:
+
+```bash
+/plugin install omnipowers@claude-plugins-official
+```
 
 ### Claude Code (via Plugin Marketplace)
 
@@ -35,22 +45,15 @@ Then install the plugin from this marketplace:
 /plugin install omnipowers@omnipowers-marketplace
 ```
 
-### Verify Installation
+### Cursor (via Plugin Marketplace)
 
-Check that commands appear:
+In Cursor Agent chat, install from marketplace:
 
-```bash
-/help
+```text
+/add-plugin omnipowers
 ```
 
-```
-# Should see:
-# /omnipowers:brainstorm - Interactive design refinement
-# /omnipowers:write-plan - Create implementation plan
-# /omnipowers:execute-plan - Execute plan in batches
-# /omnipowers:e2e - Generate and run E2E tests
-# /omnipowers:compound - Document solved problems
-```
+or search for "omnipowers" in the plugin marketplace.
 
 ### Codex
 
@@ -71,6 +74,22 @@ Fetch and follow instructions from https://raw.githubusercontent.com/aaione/omni
 ```
 
 **Detailed docs:** [docs/README.opencode.md](docs/README.opencode.md)
+
+### Gemini CLI
+
+```bash
+gemini extensions install https://github.com/aaione/omnipowers
+```
+
+To update:
+
+```bash
+gemini extensions update omnipowers
+```
+
+### Verify Installation
+
+Start a new session in your chosen platform and ask for something that should trigger a skill (for example, "help me plan this feature" or "let's debug this issue"). The agent should automatically invoke the relevant omnipowers skill.
 
 ## The Basic Workflow
 
@@ -101,7 +120,7 @@ Fetch and follow instructions from https://raw.githubusercontent.com/aaione/omni
 - **systematic-debugging** - 4-phase root cause process (includes root-cause-tracing, defense-in-depth, condition-based-waiting techniques)
 - **verification-before-completion** - Ensure it's actually fixed
 
-**Collaboration** 
+**Collaboration**
 - **brainstorming** - Socratic design refinement
 - **writing-plans** - Detailed implementation plans
 - **executing-plans** - Batch execution with checkpoints
@@ -145,7 +164,6 @@ Skills update automatically when you update the plugin:
 ## License
 
 MIT License - see LICENSE file for details
-
 ## Support
 
 - **Issues**: https://github.com/aaione/omnipowers/issues
