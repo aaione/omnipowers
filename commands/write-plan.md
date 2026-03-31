@@ -1,6 +1,5 @@
 ---
-description: Create detailed implementation plan with bite-sized tasks
-disable-model-invocation: true
+description: "[DEPRECATED] Use the writing-plans skill directly instead"
 ---
 
-Invoke the omnipowers:writing-plans skill and follow it exactly as presented to you
+> **This command is deprecated.** Use the `omnipowers:writing-plans` skill directly — it will be triggered automatically when appropriate, or invoke it with the Skill tool.

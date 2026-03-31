@@ -1,6 +1,5 @@
 ---
-description: Execute plan in batches with review checkpoints
-disable-model-invocation: true
+description: "[DEPRECATED] Use the executing-plans skill directly instead"
 ---
 
-Invoke the omnipowers:executing-plans skill and follow it exactly as presented to you
+> **This command is deprecated.** Use the `omnipowers:executing-plans` skill directly, or use `omnipowers:subagent-driven-development` (recommended) for same-session execution with review checkpoints.
